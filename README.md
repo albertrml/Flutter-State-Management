@@ -43,12 +43,14 @@ The project uses:
 lib/
  ├── main.dart
  ├── router/
- ├── models/
  ├── view/
- │    ├── ephemeral_state/
- │    ├── lifting_state_up/
- │    └── multiprovider_multiconsumer/
- └── widgets/
+ ├── ephemeral_state/
+ │    ├── local_state/
+ │    └── value_notifier/
+ └── app_state/
+      ├── lifting_state_up/
+      └── multiprovider_multiconsumer/
+ 
 ```
 
 Each folder focuses on a specific state management approach.
@@ -117,9 +119,25 @@ Example:
 
 - Counter
 
+## 2. ValueNotifier
+
+Uses:
+- `ValueNotifier<T>`
+- `ValueListenableBuilder()`
+
+Best for:
+- the state is small
+- only one value needs to be observed
+- the state belongs to a single screen
+- global state management is unnecessary
+
+Example:
+
+- Day Shift
+
 ---
 
-## 2. Lifting State Up
+## 3. Lifting State Up
 
 Uses:
 
@@ -139,7 +157,7 @@ Example:
 
 ---
 
-## 3. MultiProvider and MultiConsumer
+## 4. MultiProvider and MultiConsumer
 
 Uses:
 
