@@ -102,7 +102,7 @@ context.go('/route')
 
 # State Management Approaches
 
-## 1. Ephemeral State
+## 1. UI/Local State
 
 Uses:
 
@@ -118,6 +118,8 @@ Best for:
 Example:
 
 - Counter
+
+---
 
 ## 2. ValueNotifier
 
