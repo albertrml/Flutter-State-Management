@@ -14,7 +14,7 @@ sealed class Destine {
   });
 }
 
-class HomePage extends Destine {
+final class HomePage extends Destine {
   HomePage()
     : super(
         title: 'Home Page',
@@ -26,7 +26,7 @@ class HomePage extends Destine {
 
 // EPHEMERAL STATE MANAGEMENT
 
-class CounterPage extends Destine {
+final class CounterPage extends Destine {
   CounterPage()
     : super(
         title: 'Counter',
@@ -36,7 +36,7 @@ class CounterPage extends Destine {
       );
 }
 
-class DayShiftPage extends Destine {
+final class DayShiftPage extends Destine {
   DayShiftPage()
     : super(
         title: 'Sky Mode',
@@ -50,7 +50,7 @@ List<Destine> ephemeralStatedestines = <Destine>[CounterPage(), DayShiftPage()];
 
 // APP STATE MANAGEMENT
 
-class TimeSpentPage extends Destine {
+final class TimeSpentPage extends Destine {
   TimeSpentPage()
     : super(
         title: 'Time Spent',
@@ -60,7 +60,7 @@ class TimeSpentPage extends Destine {
       );
 }
 
-class CreateColorPage extends Destine {
+final class CreateColorPage extends Destine {
   CreateColorPage()
     : super(
         title: 'Create RGB Color',
@@ -71,4 +71,18 @@ class CreateColorPage extends Destine {
       );
 }
 
-List<Destine> appStateDestines = <Destine>[TimeSpentPage(), CreateColorPage()];
+final class MoviePage extends Destine {
+  MoviePage()
+    : super(
+        title: 'Movie List',
+        icon: Icons.smart_screen,
+        description: 'Example of app state management by BLoC and Cubit',
+        route: '/movie-screen',
+      );
+}
+
+List<Destine> appStateDestines = <Destine>[
+  TimeSpentPage(),
+  CreateColorPage(),
+  MoviePage(),
+];

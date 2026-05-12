@@ -13,7 +13,7 @@ class HomePageScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 32, bottom: 32),
-        child: Column(
+        child: ListView(
           children: [
             StateManagementWidget(
               title: 'Ephemeral State Management',

@@ -1,3 +1,4 @@
+import 'package:flutter_state_management/app_state/bloc_cubit/view/movie_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_state_management/ephemeral_state/local_state/counter.dart';
 import 'package:flutter_state_management/ephemeral_state/value_notifier/view/day_shift.dart';
@@ -26,6 +27,11 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/create-rgb-color',
       builder: (ctx, state) => const MultiproviderState(),
+    ),
+
+    GoRoute(
+      path: '/movie-screen',
+      builder: (ctx, state) => const MovieScreen(),
     ),
   ],
 );
