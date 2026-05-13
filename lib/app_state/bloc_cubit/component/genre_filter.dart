@@ -14,7 +14,7 @@ import 'package:flutter_state_management/app_state/bloc_cubit/model/genre.dart';
  */
 class GenreFilter extends StatefulWidget {
   /*
-   * 13. The MovieCubit instance is received through constructor injection.
+   * 14. The MovieCubit instance is received through constructor injection.
    *
    * This allows the widget to communicate with the business logic layer
    * without creating its own Cubit instance.
@@ -84,7 +84,7 @@ class _GenreFilterState extends State<GenreFilter> {
               });
 
               /*
-               * 14. Request a new movie list from MovieCubit
+               * 15. Request a new movie list from MovieCubit
                * using the selected genre.
                *
                * The Cubit will:

@@ -81,8 +81,19 @@ final class MoviePage extends Destine {
       );
 }
 
+final class BlocProviderLifeccyclePage extends Destine {
+  BlocProviderLifeccyclePage()
+    : super(
+        title: 'Bloc Provider Lifecycle',
+        icon: Icons.account_tree,
+        description: 'Demonstrates BlocProvider ownership and Cubit lifecycle',
+        route: '/bloc-provider-lifecycle',
+      );
+}
+
 List<Destine> appStateDestines = <Destine>[
   TimeSpentPage(),
   CreateColorPage(),
   MoviePage(),
+  BlocProviderLifeccyclePage(),
 ];

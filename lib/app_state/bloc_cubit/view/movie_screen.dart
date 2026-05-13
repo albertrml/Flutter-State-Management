@@ -21,6 +21,8 @@ import 'package:flutter_state_management/app_state/bloc_cubit/model/movie.dart';
  *
  * For educational purposes, this example demonstrates dependency
  * injection through constructor parameters instead of BlocProvider.
+ * For more details about BlocProvider, see the bloc_provider_lifecycle
+ * example.
  */
 class MovieScreen extends StatefulWidget {
   const MovieScreen({super.key});
@@ -49,6 +51,19 @@ class _MovieScreenState extends State<MovieScreen> {
   }
 
   @override
+  void dispose() {
+    /*
+   * 10. Since MovieScreen manually creates the Cubit,
+   * it also becomes responsible for disposing it.
+   *
+   * Cubits internally manage Streams and resources
+   * that must be properly closed to prevent leaks.
+   */
+    movieCubit.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -64,7 +79,7 @@ class _MovieScreenState extends State<MovieScreen> {
               ),
 
               /*
-               * 12. GenreFilter receives the MovieCubit instance
+               * 13. GenreFilter receives the MovieCubit instance
                * through constructor injection.
                *
                * This allows the widget to trigger Cubit actions
@@ -76,7 +91,7 @@ class _MovieScreenState extends State<MovieScreen> {
               GenreFilter(movieCubit: movieCubit),
 
               /*
-               * 10. BlocBuilder rebuilds its widget subtree whenever
+               * 11. BlocBuilder rebuilds its widget subtree whenever
                * the Cubit emits a new state.
                *
                * Generic parameters:
@@ -93,7 +108,7 @@ class _MovieScreenState extends State<MovieScreen> {
                 bloc: movieCubit,
                 builder: (context, state) {
                   /*
-                   * 11. The UI reacts declaratively to each state.
+                   * 12. The UI reacts declaratively to each state.
                    * Each state corresponds to a different widget tree.
                    */
                   switch (state) {
