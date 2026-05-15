@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_state_management/app_state/bloc_cubit/view/movie_screen.dart';
+import 'package:flutter_state_management/app_state/bloc_cubit/view/bloc_cubit_manual_movie_screen.dart';
 import 'package:flutter_state_management/app_state/bloc_provider_lifecycle/view/bloc_provider_counter_screen.dart';
 import 'package:flutter_state_management/app_state/lifting_state_up/view/lifting_state_up.dart';
 import 'package:flutter_state_management/app_state/multiprovider_multiconsumer/view/multiprovider_state.dart';
