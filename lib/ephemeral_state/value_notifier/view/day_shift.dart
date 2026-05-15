@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_management/ephemeral_state/value_notifier/model/sky_controller.dart';
 
-class DayShift extends StatefulWidget {
-  const DayShift({super.key});
+class ValueNotifierDayShiftScreen extends StatefulWidget {
+  const ValueNotifierDayShiftScreen({super.key});
 
   @override
-  State<DayShift> createState() => _DayShiftState();
+  State<ValueNotifierDayShiftScreen> createState() =>
+      _ValueNotifierDayShiftScreenState();
 }
 
-class _DayShiftState extends State<DayShift> {
+class _ValueNotifierDayShiftScreenState
+    extends State<ValueNotifierDayShiftScreen> {
   /*
    * The controller is created once and persists during
    * the widget lifecycle.

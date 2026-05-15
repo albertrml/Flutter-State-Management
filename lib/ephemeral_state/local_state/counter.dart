@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Counter extends StatefulWidget {
-  const Counter({super.key});
+class UIStateCounterScreen extends StatefulWidget {
+  const UIStateCounterScreen({super.key});
 
   @override
-  State<Counter> createState() => _CounterState();
+  State<UIStateCounterScreen> createState() => _UIStateCounterScreenState();
 }
 
-class _CounterState extends State<Counter> {
+class _UIStateCounterScreenState extends State<UIStateCounterScreen> {
   /* 
    * Local UI state.
    * This state belongs only to this widget.

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_management/route/go_router.dart';
+import 'package:flutter_state_management/main/route/go_router.dart';
 
 void main() {
   runApp(const MyApp());

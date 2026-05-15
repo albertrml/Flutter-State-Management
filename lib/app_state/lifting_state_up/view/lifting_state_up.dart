@@ -4,14 +4,16 @@ import 'package:flutter_state_management/app_state/lifting_state_up/view/widget/
 import 'package:flutter_state_management/app_state/lifting_state_up/view/widget/my_slider.dart';
 import 'package:provider/provider.dart';
 
-class LiftingStateUp extends StatefulWidget {
-  const LiftingStateUp({super.key});
+class LiftingStateUpTimeSpentScreen extends StatefulWidget {
+  const LiftingStateUpTimeSpentScreen({super.key});
 
   @override
-  State<LiftingStateUp> createState() => _LiftingStateUpState();
+  State<LiftingStateUpTimeSpentScreen> createState() =>
+      _LiftingStateUpTimeSpentScreenState();
 }
 
-class _LiftingStateUpState extends State<LiftingStateUp> {
+class _LiftingStateUpTimeSpentScreenState
+    extends State<LiftingStateUpTimeSpentScreen> {
   @override
   Widget build(BuildContext context) {
     /*

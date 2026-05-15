@@ -24,14 +24,16 @@ import 'package:flutter_state_management/app_state/bloc_cubit/model/movie.dart';
  * For more details about BlocProvider, see the bloc_provider_lifecycle
  * example.
  */
-class MovieScreen extends StatefulWidget {
-  const MovieScreen({super.key});
+class BlocCubitManualMovieScreen extends StatefulWidget {
+  const BlocCubitManualMovieScreen({super.key});
 
   @override
-  State<MovieScreen> createState() => _MovieScreenState();
+  State<BlocCubitManualMovieScreen> createState() =>
+      _BlocCubitManualMovieScreenState();
 }
 
-class _MovieScreenState extends State<MovieScreen> {
+class _BlocCubitManualMovieScreenState
+    extends State<BlocCubitManualMovieScreen> {
   /*
    * 8. Create an instance of MovieCubit.
    *

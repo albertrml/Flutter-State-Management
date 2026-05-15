@@ -4,14 +4,16 @@ import 'package:flutter_state_management/app_state/multiprovider_multiconsumer/v
 import 'package:flutter_state_management/app_state/multiprovider_multiconsumer/view/widget/my_color_slider.dart';
 import 'package:provider/provider.dart';
 
-class MultiproviderState extends StatefulWidget {
-  const MultiproviderState({super.key});
+class MultiproviderRGBColorScreen extends StatefulWidget {
+  const MultiproviderRGBColorScreen({super.key});
 
   @override
-  State<MultiproviderState> createState() => _MultiproviderStateState();
+  State<MultiproviderRGBColorScreen> createState() =>
+      _MultiproviderRGBColorScreenState();
 }
 
-class _MultiproviderStateState extends State<MultiproviderState> {
+class _MultiproviderRGBColorScreenState
+    extends State<MultiproviderRGBColorScreen> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

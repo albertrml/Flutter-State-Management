@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_management/app_state/bloc_provider_lifecycle/component/bloc_provider_create_widget.dart';
 import 'package:flutter_state_management/app_state/bloc_provider_lifecycle/component/bloc_provider_value_widget.dart';
 
-class BlocProviderLifecycleScreen extends StatelessWidget {
-  const BlocProviderLifecycleScreen({super.key});
+class BlocProviderCounterScreen extends StatelessWidget {
+  const BlocProviderCounterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
