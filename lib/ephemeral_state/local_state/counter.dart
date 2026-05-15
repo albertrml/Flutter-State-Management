@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UIStateCounterScreen extends StatefulWidget {
-  const UIStateCounterScreen({super.key});
+  final String title;
+  const UIStateCounterScreen({super.key, required this.title});
 
   @override
   State<UIStateCounterScreen> createState() => _UIStateCounterScreenState();
@@ -28,7 +29,10 @@ class _UIStateCounterScreenState extends State<UIStateCounterScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Counter', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(
+          widget.title,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(32),

@@ -5,7 +5,8 @@ import 'package:flutter_state_management/app_state/multiprovider_multiconsumer/v
 import 'package:provider/provider.dart';
 
 class MultiproviderRGBColorScreen extends StatefulWidget {
-  const MultiproviderRGBColorScreen({super.key});
+  final String title;
+  const MultiproviderRGBColorScreen({super.key, required this.title});
 
   @override
   State<MultiproviderRGBColorScreen> createState() =>
@@ -27,7 +28,7 @@ class _MultiproviderRGBColorScreenState
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(
-            'Create Base Color',
+            widget.title,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

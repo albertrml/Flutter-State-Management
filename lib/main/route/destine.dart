@@ -52,7 +52,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.home,
     description: 'Examples of state management',
     route: '/',
-    page: HomePageScreen(),
+    page: HomePageScreen(title: 'Home Page'),
   ),
 
   // EPHEMERAL STATE MANAGEMENT
@@ -63,7 +63,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.numbers,
     description: 'Example of ephemeral state management by UI state',
     route: '/counter',
-    page: UIStateCounterScreen(),
+    page: UIStateCounterScreen(title: 'Counter'),
   ),
 
   Destine(
@@ -73,7 +73,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.cloud,
     description: 'Example of ephemeral state management by ValueNotifier',
     route: '/day-shift',
-    page: ValueNotifierDayShiftScreen(),
+    page: ValueNotifierDayShiftScreen(title: 'Day Shift'),
   ),
 
   // APP STATE MANAGEMENT
@@ -84,7 +84,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.pie_chart,
     description: 'Example of app state management by lifting state up',
     route: '/time-spent',
-    page: LiftingStateUpTimeSpentScreen(),
+    page: LiftingStateUpTimeSpentScreen(title: 'Time Spent'),
   ),
 
   Destine(
@@ -95,7 +95,7 @@ const List<Destine> allDestines = <Destine>[
     description:
         'Example of app state management by multiprovider and multiconsumer',
     route: '/create-rgb-color',
-    page: MultiproviderRGBColorScreen(),
+    page: MultiproviderRGBColorScreen(title: 'Create RGB Color'),
   ),
 
   Destine(
@@ -105,7 +105,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.smart_screen,
     description: 'Example of app state management by BLoC and Cubit',
     route: '/movie-screen',
-    page: BlocCubitManualMovieScreen(),
+    page: BlocCubitManualMovieScreen(title: 'Movie List'),
   ),
 
   Destine(
@@ -115,7 +115,7 @@ const List<Destine> allDestines = <Destine>[
     icon: Icons.account_tree,
     description: 'Demonstrates BlocProvider ownership and Cubit lifecycle',
     route: '/bloc-provider-lifecycle',
-    page: BlocProviderCounterScreen(),
+    page: BlocProviderCounterScreen(title: 'BlocProvider Counter'),
   ),
 ];
 

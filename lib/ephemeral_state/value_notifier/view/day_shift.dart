@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_management/ephemeral_state/value_notifier/model/sky_controller.dart';
 
 class ValueNotifierDayShiftScreen extends StatefulWidget {
-  const ValueNotifierDayShiftScreen({super.key});
+  final String title;
+  const ValueNotifierDayShiftScreen({super.key, required this.title});
 
   @override
   State<ValueNotifierDayShiftScreen> createState() =>
@@ -52,7 +53,7 @@ class _ValueNotifierDayShiftScreenState
           appBar: AppBar(
             backgroundColor: Theme.of(ctx).colorScheme.inversePrimary,
             title: Text(
-              'Day Shift',
+              widget.title,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),

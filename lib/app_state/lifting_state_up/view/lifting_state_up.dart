@@ -5,7 +5,8 @@ import 'package:flutter_state_management/app_state/lifting_state_up/view/widget/
 import 'package:provider/provider.dart';
 
 class LiftingStateUpTimeSpentScreen extends StatefulWidget {
-  const LiftingStateUpTimeSpentScreen({super.key});
+  final String title;
+  const LiftingStateUpTimeSpentScreen({super.key, required this.title});
 
   @override
   State<LiftingStateUpTimeSpentScreen> createState() =>
@@ -25,7 +26,7 @@ class _LiftingStateUpTimeSpentScreenState
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(
-            'Time spent',
+            widget.title,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

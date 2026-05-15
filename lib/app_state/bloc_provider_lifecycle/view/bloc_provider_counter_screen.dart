@@ -3,12 +3,16 @@ import 'package:flutter_state_management/app_state/bloc_provider_lifecycle/compo
 import 'package:flutter_state_management/app_state/bloc_provider_lifecycle/component/bloc_provider_value_widget.dart';
 
 class BlocProviderCounterScreen extends StatelessWidget {
-  const BlocProviderCounterScreen({super.key});
+  final String title;
+  const BlocProviderCounterScreen({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Bloc Provider Lifecycle')),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+      ),
 
       body: Column(
         children: [

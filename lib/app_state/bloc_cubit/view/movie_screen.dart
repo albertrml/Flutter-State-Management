@@ -25,7 +25,8 @@ import 'package:flutter_state_management/app_state/bloc_cubit/model/movie.dart';
  * example.
  */
 class BlocCubitManualMovieScreen extends StatefulWidget {
-  const BlocCubitManualMovieScreen({super.key});
+  final String title;
+  const BlocCubitManualMovieScreen({super.key, required this.title});
 
   @override
   State<BlocCubitManualMovieScreen> createState() =>
@@ -67,20 +68,26 @@ class _BlocCubitManualMovieScreenState
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverToBoxAdapter(
-                child: Text(
-                  "Filmes",
-                  style: Theme.of(context).textTheme.displaySmall,
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(
+          widget.title,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: Text(
+                "Filmes",
+                style: Theme.of(context).textTheme.displaySmall,
               ),
+            ),
 
-              /*
+            /*
                * 13. GenreFilter receives the MovieCubit instance
                * through constructor injection.
                *
@@ -90,9 +97,9 @@ class _BlocCubitManualMovieScreenState
                * In larger applications, BlocProvider is usually
                * preferred to share Cubits across the widget tree.
                */
-              GenreFilter(movieCubit: movieCubit),
+            GenreFilter(movieCubit: movieCubit),
 
-              /*
+            /*
                * 11. BlocBuilder rebuilds its widget subtree whenever
                * the Cubit emits a new state.
                *
@@ -106,61 +113,60 @@ class _BlocCubitManualMovieScreenState
                * The `bloc` parameter specifies which Cubit instance
                * this builder should observe.
                */
-              BlocBuilder<MovieCubit, Response<List<Movie>>>(
-                bloc: movieCubit,
-                builder: (context, state) {
-                  /*
+            BlocBuilder<MovieCubit, Response<List<Movie>>>(
+              bloc: movieCubit,
+              builder: (context, state) {
+                /*
                    * 12. The UI reacts declaratively to each state.
                    * Each state corresponds to a different widget tree.
                    */
-                  switch (state) {
-                    // Success state: Display the movie list.
-                    case Success():
-                      {
-                        return SliverGrid.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 16,
-                                mainAxisExtent: 300,
-                              ),
-                          itemBuilder: (context, index) {
-                            return MovieCard(movie: state.result[index]);
-                          },
-                          itemCount: state.result.length,
-                        );
-                      }
-
-                    // Failure state: Display an error message.
-                    case Failure():
-                      return SliverFillRemaining(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            const Icon(Icons.not_interested, size: 30),
-                            const SizedBox(height: 16),
-                            Text(
-                              state.exception.toString(),
-                              overflow: TextOverflow.ellipsis,
+                switch (state) {
+                  // Success state: Display the movie list.
+                  case Success():
+                    {
+                      return SliverGrid.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 16,
+                              mainAxisExtent: 300,
                             ),
-                          ],
-                        ),
+                        itemBuilder: (context, index) {
+                          return MovieCard(movie: state.result[index]);
+                        },
+                        itemCount: state.result.length,
                       );
+                    }
 
-                    /* 
+                  // Failure state: Display an error message.
+                  case Failure():
+                    return SliverFillRemaining(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          const Icon(Icons.not_interested, size: 30),
+                          const SizedBox(height: 16),
+                          Text(
+                            state.exception.toString(),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    );
+
+                  /* 
                      * Loading state: Display a loading indicator while
                      * waiting for async operations to complete.
                      */
-                    case Loading():
-                      return SliverFillRemaining(
-                        child: Center(child: CircularProgressIndicator()),
-                      );
-                  }
-                },
-              ),
-            ],
-          ),
+                  case Loading():
+                    return SliverFillRemaining(
+                      child: Center(child: CircularProgressIndicator()),
+                    );
+                }
+              },
+            ),
+          ],
         ),
       ),
     );
